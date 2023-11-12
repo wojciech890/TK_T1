@@ -11,4 +11,5 @@
     Private Sub GenreListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GenreListBox1.SelectedIndexChanged
 
     End Sub
+
 End Class

@@ -26,6 +26,10 @@ Partial Class LibraryFrom1
         Me.GenreListBox1 = New System.Windows.Forms.ListBox()
         Me.AuthorListBox1 = New System.Windows.Forms.ListBox()
         Me.AuthorLabel1 = New System.Windows.Forms.Label()
+        Me.IsbnListBox = New System.Windows.Forms.ListBox()
+        Me.IsbnLabel1 = New System.Windows.Forms.Label()
+        Me.TitleListBox = New System.Windows.Forms.ListBox()
+        Me.TitleLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Genre
@@ -63,11 +67,50 @@ Partial Class LibraryFrom1
         Me.AuthorLabel1.Text = "Autor:"
         Me.AuthorLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'IsbnListBox
+        '
+        Me.IsbnListBox.FormattingEnabled = True
+        Me.IsbnListBox.Location = New System.Drawing.Point(554, 109)
+        Me.IsbnListBox.Name = "IsbnListBox"
+        Me.IsbnListBox.Size = New System.Drawing.Size(120, 95)
+        Me.IsbnListBox.TabIndex = 7
+        '
+        'IsbnLabel1
+        '
+        Me.IsbnLabel1.AutoSize = True
+        Me.IsbnLabel1.Location = New System.Drawing.Point(551, 84)
+        Me.IsbnLabel1.Name = "IsbnLabel1"
+        Me.IsbnLabel1.Size = New System.Drawing.Size(83, 13)
+        Me.IsbnLabel1.TabIndex = 6
+        Me.IsbnLabel1.Text = "Numer wydania:"
+        Me.IsbnLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'TitleListBox
+        '
+        Me.TitleListBox.FormattingEnabled = True
+        Me.TitleListBox.Location = New System.Drawing.Point(384, 109)
+        Me.TitleListBox.Name = "TitleListBox"
+        Me.TitleListBox.Size = New System.Drawing.Size(120, 95)
+        Me.TitleListBox.TabIndex = 5
+        '
+        'TitleLabel
+        '
+        Me.TitleLabel.AutoSize = True
+        Me.TitleLabel.Location = New System.Drawing.Point(381, 84)
+        Me.TitleLabel.Name = "TitleLabel"
+        Me.TitleLabel.Size = New System.Drawing.Size(30, 13)
+        Me.TitleLabel.TabIndex = 4
+        Me.TitleLabel.Text = "Title:"
+        '
         'LibraryFrom1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 931)
+        Me.Controls.Add(Me.IsbnListBox)
+        Me.Controls.Add(Me.IsbnLabel1)
+        Me.Controls.Add(Me.TitleListBox)
+        Me.Controls.Add(Me.TitleLabel)
         Me.Controls.Add(Me.AuthorListBox1)
         Me.Controls.Add(Me.AuthorLabel1)
         Me.Controls.Add(Me.GenreListBox1)
@@ -83,4 +126,8 @@ Partial Class LibraryFrom1
     Friend WithEvents GenreListBox1 As ListBox
     Friend WithEvents AuthorListBox1 As ListBox
     Friend WithEvents AuthorLabel1 As Label
+    Friend WithEvents IsbnListBox As ListBox
+    Friend WithEvents IsbnLabel1 As Label
+    Friend WithEvents TitleListBox As ListBox
+    Friend WithEvents TitleLabel As Label
 End Class

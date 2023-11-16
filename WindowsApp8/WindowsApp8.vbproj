@@ -102,9 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +118,39 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="covers\default.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="covers\832071608X.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="covers\8371698801.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="covers\8373117113.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="covers\8388524569.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="covers\9788324066391.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\covers\832071608X.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\covers\8371698801.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\covers\8373117113.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\covers\8388524569.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\covers\9788324066391.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

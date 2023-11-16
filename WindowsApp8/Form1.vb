@@ -82,14 +82,12 @@ Public Class LibraryFrom1
         If IsNothing(isbn) Then
             Return
         End If
-        Dim coversFolderPath As String = Path.Combine(Application.StartupPath, "covers")
 
-        Dim filePath As String = coversFolderPath + "\" + isbn + ".jpg"
-        If File.Exists(filePath) Then
-            CoverPictureBox1.Image = Image.FromFile(filePath)
-        Else
-            CoverPictureBox1.Image = Image.FromFile(coversFolderPath + "\" + "default.jpg")
-        End If
+        CoverPictureBox1.Image = My.Resources.ResourceManager.GetObject(isbn)
+
+    End Sub
+
+    Private Sub CoverPictureBox1_Click(sender As Object, e As EventArgs) Handles CoverPictureBox1.Click
 
     End Sub
 End Class

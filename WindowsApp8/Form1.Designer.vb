@@ -101,9 +101,9 @@ Partial Class LibraryFrom1
         Me.TitleLabel.AutoSize = True
         Me.TitleLabel.Location = New System.Drawing.Point(381, 84)
         Me.TitleLabel.Name = "TitleLabel"
-        Me.TitleLabel.Size = New System.Drawing.Size(30, 13)
+        Me.TitleLabel.Size = New System.Drawing.Size(35, 13)
         Me.TitleLabel.TabIndex = 4
-        Me.TitleLabel.Text = "Title:"
+        Me.TitleLabel.Text = "Tytuł:"
         '
         'EditButton
         '

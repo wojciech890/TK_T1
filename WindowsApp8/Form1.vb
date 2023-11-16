@@ -1,7 +1,7 @@
 ﻿
 Imports System.IO
 Public Class LibraryFrom1
-    Dim books As New List(Of Book) From
+    Public Property books As New List(Of Book) From
         {
             New Book With {.Id = "683f28c5-62ac-4ed4-b72a-f883260b86d1", .Title = "Hobbit", .Genre = "Fantastyka", .Author = "J.R.R Tolkien", .Isbn = "832071608X", .State = "Dostępna"},
             New Book With {.Id = "683f28c5-62ac-4ed4-b72a-f883260b86d2", .Title = "Hobbit", .Genre = "Fantastyka", .Author = "J.R.R Tolkien", .Isbn = "8373117113", .State = "Dostępna"},
@@ -87,8 +87,9 @@ Public Class LibraryFrom1
 
     End Sub
 
-    Private Sub CoverPictureBox1_Click(sender As Object, e As EventArgs) Handles CoverPictureBox1.Click
-
+    Private Sub EditButton_Click(sender As Object, e As EventArgs) Handles EditButton.Click
+        Dim editForm = New AddBooksForm()
+        editForm.Show()
     End Sub
 End Class
 

@@ -1,10 +1,11 @@
 ﻿
-
+Imports System.IO
 Public Class LibraryFrom1
     Dim books As New List(Of Book) From
         {
             New Book With {.Id = "683f28c5-62ac-4ed4-b72a-f883260b86d1", .Title = "Hobbit", .Genre = "Fantastyka", .Author = "J.R.R Tolkien", .Isbn = "832071608X", .State = "Dostępna"},
             New Book With {.Id = "683f28c5-62ac-4ed4-b72a-f883260b86d2", .Title = "Hobbit", .Genre = "Fantastyka", .Author = "J.R.R Tolkien", .Isbn = "8373117113", .State = "Dostępna"},
+            New Book With {.Id = "683f28c5-62ac-4ed4-b72a-f883260b86d3", .Title = "Hobbit", .Genre = "Fantastyka", .Author = "J.R.R Tolkien", .Isbn = "8373117116", .State = "Dostępna"},
             New Book With {.Id = "217b1a67-de54-4606-8dfa-2e58d6107737", .Title = "Wiersze wszystkie", .Genre = "Poezja", .Author = "W. Szymborska", .Isbn = "9788324066391", .State = "Dostępna"},
             New Book With {.Id = "8ecd031a-bce5-47a2-ab1a-1ae5db38ed30", .Title = "Fajdros", .Genre = "Filozofia", .Author = "Platon", .Isbn = "8388524569", .State = "Dostępna"},
             New Book With {.Id = "09a0630f-dc89-47d5-86f5-c8c184e78220", .Title = "Silmarillion", .Genre = "Fantastyka", .Author = "J.R.R Tolkien", .Isbn = "8371698801", .State = "Dostępna"},
@@ -19,10 +20,14 @@ Public Class LibraryFrom1
         For Each genre As String In subset.Distinct
             GenreListBox1.Items.Add(genre)
         Next
+
     End Sub
 
     Private Sub GenreListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GenreListBox1.SelectedIndexChanged
-        Dim genre = GenreListBox1.SelectedItem.ToString
+        Dim genre = GenreListBox1.SelectedItem
+        If IsNothing(genre) Then
+            Return
+        End If
         Dim authors = From book In books
                       Where book.Genre = genre
                       Select book.Author
@@ -38,7 +43,10 @@ Public Class LibraryFrom1
     End Sub
 
     Private Sub AuthorListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AuthorListBox1.SelectedIndexChanged
-        Dim author = AuthorListBox1.SelectedItem.ToString
+        Dim author = AuthorListBox1.SelectedItem
+        If IsNothing(author) Then
+            Return
+        End If
         Dim titles = From book In books
                      Where book.Author = author
                      Select book.Title
@@ -53,7 +61,10 @@ Public Class LibraryFrom1
     End Sub
 
     Private Sub TitleListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TitleListBox.SelectedIndexChanged
-        Dim title = TitleListBox.SelectedItem.ToString
+        Dim title = TitleListBox.SelectedItem
+        If IsNothing(title) Then
+            Return
+        End If
         Dim isbns = From book In books
                     Where book.Title = title
                     Select book.Isbn
@@ -64,6 +75,22 @@ Public Class LibraryFrom1
         For Each isbn As String In isbns
             IsbnListBox.Items.Add(isbn)
         Next
+    End Sub
+
+    Private Sub IsbnListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles IsbnListBox.SelectedIndexChanged
+        Dim isbn = IsbnListBox.SelectedItem
+        If IsNothing(isbn) Then
+            Return
+        End If
+        Dim coversFolderPath As String = Path.Combine(Application.StartupPath, "covers")
+
+        Dim filePath As String = coversFolderPath + "\" + isbn + ".jpg"
+        If File.Exists(filePath) Then
+            CoverPictureBox1.Image = Image.FromFile(filePath)
+        Else
+            CoverPictureBox1.Image = Image.FromFile(coversFolderPath + "\" + "default.jpg")
+        End If
+
     End Sub
 End Class
 

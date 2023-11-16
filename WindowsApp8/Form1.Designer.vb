@@ -30,6 +30,9 @@ Partial Class LibraryFrom1
         Me.IsbnLabel1 = New System.Windows.Forms.Label()
         Me.TitleListBox = New System.Windows.Forms.ListBox()
         Me.TitleLabel = New System.Windows.Forms.Label()
+        Me.EditButton = New System.Windows.Forms.Button()
+        Me.CoverPictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.CoverPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Genre
@@ -102,11 +105,31 @@ Partial Class LibraryFrom1
         Me.TitleLabel.TabIndex = 4
         Me.TitleLabel.Text = "Title:"
         '
+        'EditButton
+        '
+        Me.EditButton.Location = New System.Drawing.Point(698, 109)
+        Me.EditButton.Name = "EditButton"
+        Me.EditButton.Size = New System.Drawing.Size(75, 23)
+        Me.EditButton.TabIndex = 8
+        Me.EditButton.Text = "&Edytuj"
+        Me.EditButton.UseVisualStyleBackColor = True
+        '
+        'CoverPictureBox1
+        '
+        Me.CoverPictureBox1.Location = New System.Drawing.Point(60, 277)
+        Me.CoverPictureBox1.Name = "CoverPictureBox1"
+        Me.CoverPictureBox1.Size = New System.Drawing.Size(182, 255)
+        Me.CoverPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.CoverPictureBox1.TabIndex = 9
+        Me.CoverPictureBox1.TabStop = False
+        '
         'LibraryFrom1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 931)
+        Me.Controls.Add(Me.CoverPictureBox1)
+        Me.Controls.Add(Me.EditButton)
         Me.Controls.Add(Me.IsbnListBox)
         Me.Controls.Add(Me.IsbnLabel1)
         Me.Controls.Add(Me.TitleListBox)
@@ -117,6 +140,7 @@ Partial Class LibraryFrom1
         Me.Controls.Add(Me.Genre)
         Me.Name = "LibraryFrom1"
         Me.Text = "Wypożyczalnia"
+        CType(Me.CoverPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -130,4 +154,6 @@ Partial Class LibraryFrom1
     Friend WithEvents IsbnLabel1 As Label
     Friend WithEvents TitleListBox As ListBox
     Friend WithEvents TitleLabel As Label
+    Friend WithEvents EditButton As Button
+    Friend WithEvents CoverPictureBox1 As PictureBox
 End Class

@@ -22,6 +22,8 @@
         addedBook.State = "Dostępna"
 
         books.Add(addedBook)
+        XMLWrite.WriteBooksListToXML()
+
         LibraryFrom1.GenreListBox1.Items.Clear()
         LibraryFrom1.AuthorListBox1.Items.Clear()
         LibraryFrom1.TitleListBox.Items.Clear()

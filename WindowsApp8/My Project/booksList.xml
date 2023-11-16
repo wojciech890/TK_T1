@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfBook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Book>
+    <Id>683f28c5-62ac-4ed4-b72a-f883260b86d1</Id>
+    <Title>Hobbit</Title>
+    <Genre>Fantastyka</Genre>
+    <Author>J.R.R Tolkien</Author>
+    <Isbn>832071608X</Isbn>
+    <State>Dostępna</State>
+  </Book>
+  <Book>
+    <Id>683f28c5-62ac-4ed4-b72a-f883260b86d2</Id>
+    <Title>Hobbit</Title>
+    <Genre>Fantastyka</Genre>
+    <Author>J.R.R Tolkien</Author>
+    <Isbn>8373117113</Isbn>
+    <State>Dostępna</State>
+  </Book>
+  <Book>
+    <Id>683f28c5-62ac-4ed4-b72a-f883260b86d3</Id>
+    <Title>Hobbit</Title>
+    <Genre>Fantastyka</Genre>
+    <Author>J.R.R Tolkien</Author>
+    <Isbn>8373117116</Isbn>
+    <State>Dostępna</State>
+  </Book>
+  <Book>
+    <Id>217b1a67-de54-4606-8dfa-2e58d6107737</Id>
+    <Title>Wiersze wszystkie</Title>
+    <Genre>Poezja</Genre>
+    <Author>W. Szymborska</Author>
+    <Isbn>9788324066391</Isbn>
+    <State>Dostępna</State>
+  </Book>
+  <Book>
+    <Id>8ecd031a-bce5-47a2-ab1a-1ae5db38ed30</Id>
+    <Title>Fajdros</Title>
+    <Genre>Filozofia</Genre>
+    <Author>Platon</Author>
+    <Isbn>8388524569</Isbn>
+    <State>Dostępna</State>
+  </Book>
+  <Book>
+    <Id>09a0630f-dc89-47d5-86f5-c8c184e78220</Id>
+    <Title>Silmarillion</Title>
+    <Genre>Fantastyka</Genre>
+    <Author>J.R.R Tolkien</Author>
+    <Isbn>8371698801</Isbn>
+    <State>Dostępna</State>
+  </Book>
+  <Book>
+    <Id>043bf7b4-2af2-4a1c-ae50-e7c93b873e78</Id>
+    <Title>Silmarillion</Title>
+    <Genre>Fantastyka</Genre>
+    <Author>J.R.R Tolkien</Author>
+    <Isbn>8372458820</Isbn>
+    <State>Dostępna</State>
+  </Book>
+</ArrayOfBook>

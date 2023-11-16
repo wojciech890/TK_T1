@@ -1,18 +1,16 @@
 ﻿
 Imports System.IO
 Public Class LibraryFrom1
-    Public Property books As New List(Of Book) From
-        {
-            New Book With {.Id = "683f28c5-62ac-4ed4-b72a-f883260b86d1", .Title = "Hobbit", .Genre = "Fantastyka", .Author = "J.R.R Tolkien", .Isbn = "832071608X", .State = "Dostępna"},
-            New Book With {.Id = "683f28c5-62ac-4ed4-b72a-f883260b86d2", .Title = "Hobbit", .Genre = "Fantastyka", .Author = "J.R.R Tolkien", .Isbn = "8373117113", .State = "Dostępna"},
-            New Book With {.Id = "683f28c5-62ac-4ed4-b72a-f883260b86d3", .Title = "Hobbit", .Genre = "Fantastyka", .Author = "J.R.R Tolkien", .Isbn = "8373117116", .State = "Dostępna"},
-            New Book With {.Id = "217b1a67-de54-4606-8dfa-2e58d6107737", .Title = "Wiersze wszystkie", .Genre = "Poezja", .Author = "W. Szymborska", .Isbn = "9788324066391", .State = "Dostępna"},
-            New Book With {.Id = "8ecd031a-bce5-47a2-ab1a-1ae5db38ed30", .Title = "Fajdros", .Genre = "Filozofia", .Author = "Platon", .Isbn = "8388524569", .State = "Dostępna"},
-            New Book With {.Id = "09a0630f-dc89-47d5-86f5-c8c184e78220", .Title = "Silmarillion", .Genre = "Fantastyka", .Author = "J.R.R Tolkien", .Isbn = "8371698801", .State = "Dostępna"},
-            New Book With {.Id = "043bf7b4-2af2-4a1c-ae50-e7c93b873e78", .Title = "Silmarillion", .Genre = "Fantastyka", .Author = "J.R.R Tolkien", .Isbn = "8372458820", .State = "Dostępna"}
-        }
+    Public Property books As New List(Of Book)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If System.IO.File.Exists("booksList.xml") = False Then
+            Console.Write("File Not Found, initialising empty book list")
+        Else
+            books = ReadBookListFromXML()
+        End If
+
+
         Dim subset = From book In books
                      Select book.Genre
                      Order By Genre
@@ -20,7 +18,6 @@ Public Class LibraryFrom1
         For Each genre As String In subset.Distinct
             GenreListBox1.Items.Add(genre)
         Next
-
     End Sub
 
     Private Sub GenreListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GenreListBox1.SelectedIndexChanged
@@ -91,6 +88,16 @@ Public Class LibraryFrom1
         Dim editForm = New AddBooksForm()
         editForm.Show()
     End Sub
+
+    Private Function ReadBookListFromXML()
+        Dim reader As New System.Xml.Serialization.XmlSerializer(GetType(List(Of Book)))
+        Dim file As New System.IO.StreamReader(
+            "booksList.xml")
+        Dim booksList As New List(Of Book)
+        booksList = CType(reader.Deserialize(file), List(Of Book))
+        file.Close()
+        Return booksList
+    End Function
 End Class
 
 Public Class Book
@@ -101,3 +108,21 @@ Public Class Book
     Public Property Isbn As String
     Public Property State As String
 End Class
+
+Public Module XMLWrite
+
+    Sub Main()
+        WriteBooksListToXML()
+    End Sub
+
+    Public Sub WriteBooksListToXML()
+        Dim books As New List(Of Book)
+        books = LibraryFrom1.books
+        Dim writer As New System.Xml.Serialization.XmlSerializer(GetType(List(Of Book)))
+        Dim file As New System.IO.StreamWriter(
+            "booksList.xml")
+        writer.Serialize(file, LibraryFrom1.books)
+        file.Close()
+    End Sub
+End Module
+

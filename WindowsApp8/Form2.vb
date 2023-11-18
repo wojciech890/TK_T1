@@ -1,8 +1,4 @@
 ﻿Public Class AddBooksForm
-    Private Sub AddBooksForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub CloseButton1_Click(sender As Object, e As EventArgs) Handles CloseButton1.Click
         AddBooksForm.ActiveForm.Close()
     End Sub
